@@ -23,8 +23,15 @@ public class BankService {
      * @param amount the amount to be deposited.
      */
     public void deposit(double amount){
+          this.balance += amount; 
+            }
+            
+            
+        
+        
+        
 
-    }
+    
 
     /**
      * TODO: implement functionality to decrease the user's balance by an amount.
@@ -32,6 +39,14 @@ public class BankService {
      * @param amount the amount to be withdrawn.
      */
     public void withdraw(double amount){
+        if(balance >=0) 
+        {
+            balance = balance-amount;
+            if (balance < 0) 
+            {
+                balance = balance+amount;
+        }
+    }
 
     }
 
@@ -40,6 +55,6 @@ public class BankService {
      * @return the user's balance.
      */
     public double getBalance(){
-        return 0;
+        return balance;
     }
 }
